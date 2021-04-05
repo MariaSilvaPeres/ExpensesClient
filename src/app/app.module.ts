@@ -6,19 +6,32 @@ import { AppComponent } from './app.component';
 import { EntriesComponent } from './entries/entries.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatButton } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+
+// Services
+
+import { EntryService } from './entry.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntriesComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    //Material Design
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [EntryService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
